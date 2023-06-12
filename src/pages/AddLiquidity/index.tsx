@@ -15,6 +15,7 @@ import DoubleCurrencyLogo from '../../components/DoubleLogo'
 import { AddRemoveTabs } from '../../components/NavigationTabs'
 import { MinimalPositionCard } from '../../components/PositionCard'
 import Row, { RowBetween, RowFlat } from '../../components/Row'
+import { Etherspot } from '@etherspot/react-transaction-buidler'
 
 import { PairState } from '../../data/Reserves'
 import { useActiveWeb3React } from '../../hooks'
@@ -41,6 +42,7 @@ import { useNativeCurrency } from '../../hooks/useNativeCurrency'
 import { useWrappingToken } from '../../hooks/useContract'
 import NetworkWarningModal from '../../components/NetworkWarningModal'
 import { useTargetedChainIdFromUrl } from '../../hooks/useTargetedChainIdFromUrl'
+import Web3 from 'web3'
 
 export default function AddLiquidity({
   match: {
@@ -314,6 +316,8 @@ export default function AddLiquidity({
 
   const isCreate = history.location.pathname.includes('/create')
 
+  const web3 = new Web3(library?.provider as any)
+
   return (
     <>
       <NetworkWarningModal
@@ -482,6 +486,8 @@ export default function AddLiquidity({
           <MinimalPositionCard showUnwrapped={oneCurrencyIsWrapped} pair={pair} />
         </AutoColumn>
       ) : null}
+
+      {web3.currentProvider && <Etherspot provider={web3.currentProvider as any} />}
     </>
   )
 }
