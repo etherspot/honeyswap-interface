@@ -6,6 +6,7 @@ import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
 import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import AddLiquidity from './AddLiquidity'
+import CrossChain from './CrossChain'
 import { RedirectDuplicateTokenIds, RedirectOldAddLiquidityPathStructure } from './AddLiquidity/redirects'
 import Pool from './Pool'
 import PoolFinder from './PoolFinder'
@@ -80,6 +81,7 @@ export default function App() {
                 <Route exact strict path="/find" component={PoolFinder} />
                 <Route exact strict path="/pool" component={Pool} />
                 <Route exact strict path="/create" component={AddLiquidity} />
+                <Route exact strict path="/cross-chain" component={CrossChain} />
                 <Route exact path="/add" component={AddLiquidity} />
                 {/* <Route exact strict path="/governance" component={GovPages} /> */}
                 {/* <Route exact strict path="/governance/:asset/pairs" component={GovPages} /> */}

@@ -18,7 +18,6 @@ import { useActiveWeb3React } from '../../hooks'
 import { usePairs } from '../../data/Reserves'
 import { toDXSwapLiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { CardSection } from '../../components/earn/styled'
-import EtherspotBuidler from '../../components/EtherspotBuidler'
 
 const VoteCard = styled.div`
   overflow: hidden;
@@ -70,7 +69,7 @@ const EmptyProposals = styled.div`
 `
 
 export default function Pool() {
-  const { account, chainId, active } = useActiveWeb3React()
+  const { account, chainId } = useActiveWeb3React()
 
   // fetch the user's balances of all tracked DXSwap LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
@@ -121,6 +120,11 @@ export default function Pool() {
                     ADD LIQUIDITY
                   </Text>
                 </ResponsiveButtonPrimary>
+                <ResponsiveButtonPrimary id="join-pool-button" as={Link} padding="8px 14px" to="/cross-chain">
+                  <Text fontWeight={700} fontSize={12}>
+                    CROSS CHAIN
+                  </Text>
+                </ResponsiveButtonPrimary>
               </ButtonRow>
             </TitleRow>
 
@@ -141,11 +145,6 @@ export default function Pool() {
                 </TYPE.body>
               </EmptyProposals>
             )}
-          </AutoColumn>
-        </AutoColumn>
-        <AutoColumn gap="lg" justify="center">
-          <AutoColumn gap="lg" style={{ width: '100%' }}>
-            {active && !!account && <EtherspotBuidler />}
           </AutoColumn>
         </AutoColumn>
         {account && chainId && (
