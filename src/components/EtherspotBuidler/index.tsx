@@ -140,7 +140,6 @@ export default function EtherspotBuidler({ connector }: { connector: AbstractCon
             hideTransactionBlockTitle
             hideWalletSwitch
             removeTransactionBlockContainer
-            hideActionPreviewHeader
           />
         </EtherspotBuidlerWrapper>
       </AppBody>
