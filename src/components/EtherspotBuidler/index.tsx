@@ -115,9 +115,6 @@ export default function EtherspotBuidler({ connector }: { connector: AbstractCon
   useEffect(() => {
     if (!connector) return
     getConnectedProvider()
-    return () => {
-      setConnectedProvider(null)
-    }
   }, [connector, getConnectedProvider])
 
   return (
@@ -140,6 +137,7 @@ export default function EtherspotBuidler({ connector }: { connector: AbstractCon
             hideTransactionBlockTitle
             hideWalletSwitch
             removeTransactionBlockContainer
+            // hideActionPreviewHeader
           />
         </EtherspotBuidlerWrapper>
       </AppBody>
