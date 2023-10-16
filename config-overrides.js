@@ -3,12 +3,9 @@ const GitRevisionPlugin = require('git-revision-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
-const nodeExternals = require('webpack-node-externals');
 
 // Used to make the build reproducible between different machines (IPFS-related)
 module.exports = (config, env) => {
-  config.externals = [...config.externals ?? [], nodeExternals()];
-
   if (env !== 'production') {
     return config
   }
