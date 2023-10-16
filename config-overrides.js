@@ -7,7 +7,7 @@ const nodeExternals = require('webpack-node-externals');
 
 // Used to make the build reproducible between different machines (IPFS-related)
 module.exports = (config, env) => {
-  config.externals = [nodeExternals()];
+  config.externals = [...config.externals, nodeExternals()];
 
   if (env !== 'production') {
     return config
