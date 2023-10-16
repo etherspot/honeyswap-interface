@@ -93,7 +93,8 @@
     "styled-components": "^4.2.0",
     "typescript": "^3.8.3",
     "use-count-up": "^2.2.5",
-    "wcag-contrast": "^3.0.0"
+    "wcag-contrast": "^3.0.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
