@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Etherspot } from '@etherspot/react-transaction-buidler'
 import AppBody from '../../pages/AppBody'
@@ -106,41 +106,47 @@ const themeOverride = {
 export default function EtherspotBuidler({ connector }: { connector: AbstractConnector }) {
   const [connectedProvider, setConnectedProvider] = useState<any | null>(null)
 
-  const getConnectedProvider = useCallback(async () => {
-    if (!connector) return
-    const web3Provider = await connector.getProvider()
-    setConnectedProvider(web3Provider)
+  useEffect(() => {
+    let expired = false;
+
+    const getConnectedProvider = async () => {
+      if (!connector) return
+      const web3Provider = await connector.getProvider()
+      if (!web3Provider || expired) return
+      setConnectedProvider(web3Provider)
+    }
+
+    getConnectedProvider();
+
+    return () => {
+      expired = true
+    }
   }, [connector])
 
-  useEffect(() => {
-    if (!connector) return
-    getConnectedProvider()
-  }, [connector, getConnectedProvider])
+  if (!connectedProvider) return null
 
   return (
-    connectedProvider && (
-      <AppBody>
-        <AddRemoveTabs creating={false} adding={true} />
-        <EtherspotBuidlerWrapper>
-          <Etherspot
-            provider={connectedProvider}
-            chainId={CHAIN_ID}
-            defaultTransactionBlocks={[{ type: 'HONEY_SWAP_LP' }]}
-            themeOverride={themeOverride}
-            hideSettingsButton
-            hideBuyButton
-            hideWalletBlockNavigation
-            hideTopNavigation
-            hideCloseTransactionBlockButton
-            hideAddButton
-            removeOuterContainer
-            hideTransactionBlockTitle
-            hideWalletSwitch
-            removeTransactionBlockContainer
-            // hideActionPreviewHeader
-          />
-        </EtherspotBuidlerWrapper>
-      </AppBody>
-    )
+    <AppBody>
+      <AddRemoveTabs creating={false} adding={true} />
+      <EtherspotBuidlerWrapper>
+        <Etherspot
+          provider={connectedProvider}
+          chainId={CHAIN_ID}
+          defaultTransactionBlocks={[{ type: 'HONEY_SWAP_LP' }]}
+          themeOverride={themeOverride}
+          hideSettingsButton
+          hideBuyButton
+          hideWalletBlockNavigation
+          hideTopNavigation
+          hideCloseTransactionBlockButton
+          hideAddButton
+          removeOuterContainer
+          hideTransactionBlockTitle
+          hideWalletSwitch
+          removeTransactionBlockContainer
+          // hideActionPreviewHeader
+        />
+      </EtherspotBuidlerWrapper>
+    </AppBody>
   )
 }

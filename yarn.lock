@@ -1657,13 +1657,13 @@
   resolved "https://registry.yarnpkg.com/@etherspot/react-etherspot/-/react-etherspot-1.2.0.tgz#fa5a5344eed7d663ebdd6d1d0b4bcf5d878e6963"
   integrity sha512-FI0UkQlwoX2f46PHe+vaZA6q11OVQB8VIpAycUGmg0yM+XDIPLHKiDWCwPttOOd9kWIX1kk7Kka3MBtkO3nFsQ==
 
-"@etherspot/react-transaction-buidler@^0.26.7":
-  version "0.26.7"
-  resolved "https://registry.yarnpkg.com/@etherspot/react-transaction-buidler/-/react-transaction-buidler-0.26.7.tgz#3dec67574b8be7a83540c97c5a9e383fc3996524"
-  integrity sha512-H+4s9ZosIWjNbT16RVMHE58Wy9KoTFnF1bde1y8EN5whHlUtBXiTmgcAcHawon6z45iIljvOUANqL/0g1kFopA==
+"@etherspot/react-transaction-buidler@0.26.8":
+  version "0.26.8"
+  resolved "https://registry.yarnpkg.com/@etherspot/react-transaction-buidler/-/react-transaction-buidler-0.26.8.tgz#d28e089809cabdba79e707f7f7bb4503d78f62f3"
+  integrity sha512-MosNP6k8PHzbtGWViUzvVrn5U41bxZ2s9XVkfyu4NB+T8ZSO3ynSoeVxULvbjFNs6Q/x9q60wAprPLcbN0XjUQ==
   dependencies:
     "@etherspot/prime-sdk" "1.2.11"
-    "@etherspot/transaction-kit" "0.4.9"
+    "@etherspot/transaction-kit" "0.5.0"
     "@tippyjs/react" "^4.2.6"
     autoprefixer "^10.4.13"
     axios "^0.27.2"
@@ -1682,10 +1682,10 @@
     rxjs "^6.6.7"
     styled-components "^5.3.5"
 
-"@etherspot/transaction-kit@0.4.9":
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/@etherspot/transaction-kit/-/transaction-kit-0.4.9.tgz#e5659ddca4f4c44435faaa7a0a9df953f040db05"
-  integrity sha512-UFqWtkiSDp8VV3q0sFxC9engDCDVIuW4he1dmEpUytNb08G4w1vA7YHeIywMb9ctGNbsPPPXbiJybFqI3uwCYA==
+"@etherspot/transaction-kit@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@etherspot/transaction-kit/-/transaction-kit-0.5.0.tgz#6cd32e34adb8c36bb3ae22d07bd82709bdb321af"
+  integrity sha512-SgOXPY0nzZoaxqFM0oTdv2Y+N3CuhcXtoof2gDX0S4qpTpuQzQw1LBnO71ttdlpL9AgXcGzaTGImfw1hwCMUMQ==
   dependencies:
     "@etherspot/eip1271-verification-util" "^0.1.2"
     "@etherspot/prime-sdk" "^1.2.11"
@@ -1694,7 +1694,7 @@
     ethers "^5.6.9"
     etherspot "^1.41.2"
     lodash.uniq "^4.5.0"
-    react ">=18.2.0"
+    react "^16.13.0"
     reflect-metadata "^0.1.13"
     rxjs "^6.6.7"
 
@@ -9684,7 +9684,7 @@ ethers@^5.5.3, ethers@^5.6.9, ethers@^5.7.2:
     "@ethersproject/web" "5.7.1"
     "@ethersproject/wordlists" "5.7.0"
 
-etherspot@^1.41.2, etherspot@^1.43.8:
+etherspot@^1.41.2, etherspot@^1.43.8, etherspot@^1.44.0:
   version "1.44.0"
   resolved "https://registry.yarnpkg.com/etherspot/-/etherspot-1.44.0.tgz#dc32fb503b1982887ad7eb92fc90605c1a0b7f62"
   integrity sha512-QPA9SKX5i5Kf2mysLI7pXfssCNp04vZvBe20doK8ru14D0PG7y1U8+VGPb7nhvdcRputu+OomyzyCFhpitnklw==
@@ -16476,14 +16476,7 @@ react-window@^1.8.5:
     "@babel/runtime" "^7.0.0"
     memoize-one ">=3.1.1 <6"
 
-react@>=18.2.0:
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
-  integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
-  dependencies:
-    loose-envify "^1.1.0"
-
-react@^16.13.1:
+react@^16.13.0, react@^16.13.1:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
   integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
