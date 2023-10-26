@@ -4,7 +4,7 @@
   "description": "DXswap Decentralized Application",
   "devDependencies": {
     "@apollo/client": "^3.3.13",
-    "@etherspot/react-transaction-buidler": "0.26.10",
+     "@etherspot/react-transaction-buidler": "0.26.11",
     "@ethersproject/experimental": "^5.0.10",
     "@fontsource/montserrat": "^4.2.2",
     "@gnosis.pm/safe-apps-web3-react": "^0.6.8",
